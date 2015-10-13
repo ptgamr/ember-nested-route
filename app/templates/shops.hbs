@@ -1,6 +1,6 @@
-The currently selected item:
-{{#if selectedValue}}
-  {{selectedValue.name}}
+The currently selected shop:
+{{#if selection}}
+  {{selection.name}}
 {{else}}
   &lt;none&gt;
 {{/if}}
@@ -12,9 +12,9 @@ The currently selected item:
 {{! my-select content=model action=(action (mut mySelectedItem))}}
 
 {{my-select
-  content=list
-  action=(action (mut selectedValue))
-  selection=selectedValue
+  content=model
+  action=(action (mut selection))
+  selection=selection
   prompt="Select your shop"
 }}
 {{outlet}}

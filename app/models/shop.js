@@ -8,5 +8,5 @@ const {
 
 export default Model.extend({
   name: attr('string'),
-  categories: hasMany('category')
+  categories: hasMany('category', {async: true})
 });

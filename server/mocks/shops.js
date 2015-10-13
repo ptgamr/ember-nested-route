@@ -2,13 +2,15 @@ module.exports = function(app) {
   var express = require('express');
   var shopsRouter = express.Router();
 
+  var SHOPS = [
+    {id: 1, name: 'shop 1', categories: [1,2,3,10]},
+    {id: 2, name: 'shop 2', categories: [4,5]},
+    {id: 3, name: 'shop 3', categories: [7,8,9,10,11,12]}
+  ];
+
   shopsRouter.get('/', function(req, res) {
     res.send({
-      'shops': [
-        {id: 1, name: 'shop 1', categories: [1,2,3,10]},
-        {id: 2, name: 'shop 2', categories: [4,5]},
-        {id: 3, name: 'shop 3', categories: [7,8,9,10,11,12]}
-      ]
+      'shops': SHOPS
     });
   });
 
@@ -18,9 +20,7 @@ module.exports = function(app) {
 
   shopsRouter.get('/:id', function(req, res) {
     res.send({
-      'shops': {
-        id: req.params.id
-      }
+      'shops': SHOPS[req.params.id - 1]
     });
   });
 
