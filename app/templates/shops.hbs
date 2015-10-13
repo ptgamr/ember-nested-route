@@ -1,0 +1,20 @@
+The currently selected item:
+{{#if selectedValue}}
+  {{selectedValue.name}}
+{{else}}
+  &lt;none&gt;
+{{/if}}
+
+{{! myItems is an array of strings: ['first', 'second', 'third',...] }}
+{{! This uses the `action` and `mut` helpers to pass in an action that
+    will update the (outer scope) `mySelectedItem` property with the user's
+    selection. }}
+{{! my-select content=model action=(action (mut mySelectedItem))}}
+
+{{my-select
+  content=list
+  action=(action (mut selectedValue))
+  selection=selectedValue
+  prompt="Select your shop"
+}}
+{{outlet}}
