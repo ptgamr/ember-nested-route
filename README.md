@@ -1,5 +1,12 @@
 # Ember-nested-route
 
+Features:
+
+* parent route `shops` has select (/shops)
+* onSelect, navigate to the child state `shops.show` (/shops/1)
+* default navigate to first category in side the shop `shops.show.category` (/shops/1/1)
+* on Refresh, keep the current route & sync the state of the select 
+
 ![Ember nested route demo](http://i.imgur.com/BoWwytX.gif)
 
 ## Prerequisites
