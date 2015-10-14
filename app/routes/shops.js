@@ -15,6 +15,9 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
 
-    controller.set('selection', model.findBy('selected', true));
+    let selection = model.findBy('selected', true);
+    if (selection) {
+      controller.set('selection', selection);
+    }
   }
 });
