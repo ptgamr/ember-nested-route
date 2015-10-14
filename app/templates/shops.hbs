@@ -11,9 +11,16 @@ The currently selected shop:
     selection. }}
 {{! my-select content=model action=(action (mut mySelectedItem))}}
 
-{{my-select
+{{!my-select
   content=model
   action=(action (mut selection))
+  selection=selection
+  prompt="Select your shop"
+}}
+
+{{my-select
+  content=model
+  action=(action 'navigate')
   selection=selection
   prompt="Select your shop"
 }}
