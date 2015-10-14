@@ -3,6 +3,7 @@
 Features:
 
 * parent route `shops` has a select box (/shops)
+* the first shop has to be selected when navigate to `/shops`
 * onSelect, navigate to the child state `shops.show` (/shops/1)
 * default navigate to first category in side the shop `shops.show.category` (/shops/1/1)
 * on Refresh, keep the current route & sync the state of the select 
