@@ -9,6 +9,6 @@ export default Ember.Route.extend({
       this.transitionTo('shops.show.category', shop.get('categories.firstObject.id'));
     }
 
-    this.controllerFor('shops').set('selection', shop);
+    //this.controllerFor('shops').set('selectedShop', shop);
   }
 });
