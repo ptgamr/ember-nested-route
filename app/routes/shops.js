@@ -9,7 +9,7 @@ export default Ember.Route.extend({
   },
 
   afterModel: function(model, transition) {
-    if (transition.targetName === ('shops.index')) {
+    if (transition.targetName === 'shops.index') {
       const firstShop = model.get('firstObject');
       this.transitionTo('shops.show', firstShop);
     }
