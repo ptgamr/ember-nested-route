@@ -13,7 +13,7 @@ export default Ember.Route.extend({
       const firstShop = model.get('firstObject');
       this.transitionTo('shops.show', firstShop);
     }
-    this.set('shopId', transition.params['shops.show']['shop_id'] || 1);
+    this.set('shopId', transition.params['shops.show']['shop_id']);
   },
 
   setupController(controller, model) {
