@@ -2,7 +2,7 @@
 <h2 id="title">Welcome to Ember</h2>
 {{link-to 'Go Home' 'index' }}
 <br/>
-{{link-to 'Shops selection' 'shops' }}
+{{link-to 'Shops selection' 'shops' current-when='shops shops.show.category'}}
 <hr>
 {{outlet}}
 </div>

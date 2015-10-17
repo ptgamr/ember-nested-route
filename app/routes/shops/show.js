@@ -8,7 +8,5 @@ export default Ember.Route.extend({
     if ('shops.show.index' === transition.targetName) {
       this.transitionTo('shops.show.category', shop.get('categories.firstObject.id'));
     }
-
-    this.controllerFor('shops').set('selection', shop);
   }
 });

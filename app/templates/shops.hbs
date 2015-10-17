@@ -1,27 +1,14 @@
 The currently selected shop:
-{{#if selection}}
-  {{selection.name}}
+{{#if selectedShop}}
+  {{selectedShop.name}}
 {{else}}
   &lt;none&gt;
 {{/if}}
 
-{{! myItems is an array of strings: ['first', 'second', 'third',...] }}
-{{! This uses the `action` and `mut` helpers to pass in an action that
-    will update the (outer scope) `mySelectedItem` property with the user's
-    selection. }}
-{{! my-select content=model action=(action (mut mySelectedItem))}}
-
-{{!my-select
-  content=model
-  action=(action (mut selection))
-  selection=selection
-  prompt="Select your shop"
-}}
-
-{{my-select
-  content=model
-  action=(action 'navigate')
-  selection=selection
-  prompt="Select your shop"
-}}
+{{#x-select value=selectedShop action='navigate'}}
+  <option>Select your shop</option>
+  {{#each model as |shop|}}
+    {{#x-option value=shop}}{{shop.name}}{{/x-option}}
+  {{/each}}
+{{/x-select}}
 {{outlet}}
